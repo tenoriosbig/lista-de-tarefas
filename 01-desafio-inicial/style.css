@@ -1,0 +1,198 @@
+* { box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+:root{  /* Variáveis de cores para fácil manutenção e consistência */
+  --fundo: #f0f2f5;
+  --bloco: #ffffff;
+  --primaria: #0058c7;
+  --legendas: #777;
+  --remover: #d9534f;
+  --sucesso: #28a745;
+}
+
+body { /* Estilos globais do corpo da página */
+  font-family: Arial, sans-serif;
+  background: var(--fundo);
+  color: #222;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh; 
+  padding: 28px;
+}
+
+.container{ /* Estilos do container principal */
+  background: var(--bloco);
+  width: 100%;
+  max-width: 520px;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+h1{ /* Estilos do título principal */
+  text-align: center;
+  color: var(--primaria);
+  margin-bottom: 14px;
+  font-size: 1.4rem;
+}
+
+.grupo-entrada{ /* Estilos do grupo de entrada (formulário) */
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+#entradaTarefa{  /* Estilos do campo de entrada de tarefa */
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 
+  8px;
+  border: 1px solid #d6dbe1;
+  font-size: 0.95rem;
+}
+
+#entradaTarefa:focus{  /* Estilos do campo de entrada quando em foco , ou seja, quando o usuário clica nele */
+  outline: none;
+  border-color: var(--primaria);
+  box-shadow: 0 0 0 3px rgba(0,85,170,0.08);
+}
+
+#botaoAdicionar{ /* Estilos do botão de adicionar tarefa */
+  background: var(--primaria);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+
+.controles{ /* Estilos da seção de controles (filtros e estatísticas) */
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.filtros{ /* Estilos da seção de filtros */
+  display:flex;
+  gap: 5px;
+}
+
+.botao-filtro{ /* Estilos dos botões de filtro */
+  background: transparent;
+  border: 1px solid #e2e6ea;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+
+.botao-filtro.ativo{ /* Estilos do botão de filtro ativo */
+  background: var(--primaria);
+  color: white;
+  border-color: var(--primaria);
+}
+
+.estatisticas{ /* Estilos da seção de estatísticas */
+  color: var(--legendas);
+  font-size: 0.9rem;
+}
+
+
+.lista-tarefas{  /* Estilos da lista de tarefas */
+  list-style: none; 
+  margin-top: 8px; 
+}
+
+
+.item-tarefa{ /* Estilos de cada item de tarefa */
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fbfdff;
+  margin-bottom: 8px;
+  border: 1px solid #eef2f6;
+}
+
+.texto-tarefa{ /* Estilos do texto da tarefa */
+  flex: 1;
+  word-break: break-word;
+  padding-right: 8px;
+}
+
+.item-tarefa.concluida .texto-tarefa{ /* Estilos do texto da tarefa quando concluída */
+  text-decoration: line-through;
+  color: gray;
+}
+
+.botoes-acao{ display:flex; gap: 8px; align-items:center; } /* Estilos do contêiner dos botões de ação */
+
+.botao-concluir{ /* Estilos do botão de concluir tarefa */
+  background: var(--sucesso);
+  color: white;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.botao-concluir:hover{  /* Efeito hover para o botão de concluir tarefa ou seja quando o usuário passa o mouse sobre ele */
+    opacity: 0.95; 
+}
+
+.botao-remover{ /* Estilos do botão de remover tarefa */
+  background: var(--remover);
+  color: white;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.botao-remover:hover{ /* Efeito hover para o botão de remover tarefa ou seja quando o usuário passa o mouse sobre ele */
+    opacity: 0.95; 
+}
+
+.tarefa-vazia{ /* Estilos da mensagem quando não há tarefas */
+  padding: 16px;
+  border-radius: 8px;
+  background: #fafafa;
+  border: 1px dashed #e8eef6;
+  color: #546173;
+  text-align:center;
+  margin-top:8px;
+}
+
+.dica{ /* Estilos da dica na parte inferior */
+    margin-top: 10px; 
+    color: var(--legendas); 
+    font-size: 0.6rem; 
+    text-align:center; 
+}
+
+kbd{ /* Estilos do elemento kbd (tecla de atalho) */
+    background:#eee; 
+    border-radius:4px; 
+    padding:2px 6px; /* Espaçamento interno */
+    font-size:0.55rem; 
+}
+
+.sr-only{  /* Classe para esconder elementos visualmente, mas mantê-los acessíveis para leitores de tela */
+  position:absolute !important; 
+  height:1px; width:1px;
+  overflow:hidden;
+  clip:rect(1px,1px,1px,1px);
+  white-space:nowrap;
+  border:0;
+  padding:0;
+  margin:-1px;
+}
